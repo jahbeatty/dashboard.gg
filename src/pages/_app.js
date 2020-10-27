@@ -1,16 +1,28 @@
-import { ThemeProvider, CSSReset, ColorModeProvider } from '@chakra-ui/core'
+import React, {useState, useEffect} from 'react';
+import ChampionList from '../components/ChampionList'
+import axios from 'axios'
 
-import theme from '../theme'
 
-function MyApp({ Component, pageProps }) {
+const App = () => {
+  const [championData, setChampionData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      const fetchData = async () => {
+        setLoading(true);
+        const result = await axios('https://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json')
+        console.log(result.data.data);
+        setChampionData(result.data.data);
+        setLoading(false);
+      }
+      fetchData();
+    }, [])
+
   return (
-    <ThemeProvider theme={theme}>
-      <ColorModeProvider>
-        <CSSReset />
-        <Component {...pageProps} />
-      </ColorModeProvider>
-    </ThemeProvider>
+    <div>
+      <ChampionList loading={loading} championData={championData}/>
+    </div>
   )
 }
 
-export default MyApp
+export default App
