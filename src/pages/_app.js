@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ChampionList from '../components/ChampionList'
 import axios from 'axios'
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
 
 
 const App = () => {
@@ -19,9 +21,11 @@ const App = () => {
     }, [])
 
   return (
-    <div>
+    <>
+      <Header/>
+      <SearchBar />
       <ChampionList loading={loading} championData={championData}/>
-    </div>
+    </>
   )
 }
 
