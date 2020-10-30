@@ -3,8 +3,7 @@ import ChampionItem from './ChampionItem'
 import { Grid, Flex, Center, Image, Box } from '@chakra-ui/core';
 
 const ChampionList = ({ championData, loading }) => {
-
-    console.log(championData.length === 0)
+    
     return loading ? (
         <h1>Loading...</h1>
     ) : (
