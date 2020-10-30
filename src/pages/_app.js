@@ -12,9 +12,9 @@ const App = () => {
   useEffect(() => {
       const fetchData = async () => {
         setLoading(true);
-        const result = await axios(`https://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion${query}.json`)
-        // console.log(result.data.data);
-        setChampionData(result.data.data);
+        const result = await axios(`https://ddragon.leagueoflegends.com/cdn/10.21.1/data/en_US/champion.json`)
+        console.log(Object.values(result.data.data).filter(champion => champion.name.toLowerCase().startsWith(query)));
+        setChampionData(Object.values(Object.values(result.data.data).filter(champion => champion.name.toLowerCase().startsWith(query))));
         setLoading(false);
       }
       fetchData();
