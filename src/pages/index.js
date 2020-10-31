@@ -4,6 +4,6 @@ const Index = () => (
   <>
     <App />
   </>
-)
+);
 
-export default Index
+export default Index;

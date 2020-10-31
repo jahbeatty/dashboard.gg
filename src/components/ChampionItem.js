@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 import { Box, Center, Image } from "@chakra-ui/core";
 
 function ChampionItem({ item }) {
-    return (
-        <>
-        <Box>
+  return (
+    <>
+      <Box>
         <Center>
-        <div>
-            {item.name}
-        </div>
+          <div>{item.name}</div>
         </Center>
-        <a href={`https://na.leagueoflegends.com/en-us/champions/${item.name.toLowerCase()}`}>
-        <Image 
-            name={item.name} 
+        <a
+          href={`https://na.leagueoflegends.com/en-us/champions/${item.name.toLowerCase()}`}
+        >
+          <Image
+            name={item.name}
             src={`https://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/${item.image.full}`}
             key={item.key}
-        />
+          />
         </a>
-        </Box>
-        </>
-    )
+      </Box>
+    </>
+  );
 }
 
-export default ChampionItem
+export default ChampionItem;
