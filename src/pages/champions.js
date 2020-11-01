@@ -3,6 +3,7 @@ import ChampionList from "../components/ChampionList";
 import axios from "axios";
 import Header from "../components/Header";
 import SearchBar from "../components/SearchBar";
+import LolLogo from "../components/LolLogo";
 
 const Champions = () => {
   const [championData, setChampionData] = useState([]);
@@ -30,6 +31,7 @@ const Champions = () => {
   return (
     <>
       <Header />
+      <LolLogo />
       <SearchBar getQuery={(q) => setQuery(q)} />
       <ChampionList loading={loading} championData={championData} />
     </>
