@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { ThemeProvider, CSSReset, ColorModeProvider } from "@chakra-ui/core";
+import theme from "../theme";
 
-const App = ({ Component, ...pageProps }) => {
+const App = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
 

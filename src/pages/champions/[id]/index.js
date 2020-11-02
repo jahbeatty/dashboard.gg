@@ -12,7 +12,7 @@ export default class Champion extends Component {
   }
 
   render() {
-    const data = this.props.pageProps;
+    const data = this.props;
     console.log(data);
     return (
       <>
