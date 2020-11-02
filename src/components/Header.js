@@ -29,7 +29,7 @@ function Header() {
               Champions
             </CLink>
           </Link>
-          <Link href="#">
+          <Link href="/">
             <CLink cursor="pointer" fontSize={20} mr={20} color="white">
               Register
             </CLink>

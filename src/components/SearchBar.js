@@ -21,7 +21,6 @@ function SearchBar({ getQuery }) {
 
   const onChange = (d) => {
     setText(d);
-    console.log(d);
     getQuery(d);
   };
 

@@ -11,7 +11,7 @@ const ChampionList = ({ championData, loading }) => {
       <Grid templateColumns="repeat(5, 1fr)" gap={2}>
         {Object.values(championData).map((item) => (
           <Flex key={item.id}>
-            <ChampionItem key={item.id} item={item}></ChampionItem>
+            <ChampionItem item={item}></ChampionItem>
           </Flex>
         ))}
       </Grid>
